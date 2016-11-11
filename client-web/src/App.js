@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import YouTubePlayer from './YouTubeVideoPlayer';
+import rooms from './db'
+console.log(rooms.room1.videoId);
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +28,7 @@ class App extends Component {
 
 
   render() {
+    var room = 'room1' //hardcoded for now
     return (
       <div className="App">
         <button onClick={() => this.setState({playerState: !this.state.playerState})}>click here</button>
@@ -34,12 +37,12 @@ class App extends Component {
         </input>
 
         <YouTubePlayer
-          YTid='a-Zt_oGTm4I'
+          YTid= {rooms[room].videoId}
           currentTime={this.state.currentTime}
           playerState={this.state.playerState}
           onStateChange={this.onStateChange.bind(this)} />
         <YouTubePlayer
-          YTid='a-Zt_oGTm4I'
+          YTid= {rooms[room].videoId}
           currentTime={this.state.currentTime}
           playerState={this.state.playerState}
           onStateChange={this.onStateChange.bind(this)} />

@@ -227,6 +227,6 @@ setInterval(function(){
       }
     })
   }
-}, (1000 /* * 60 * 60 * 4 */))
+}, (1000 * 60 * 60 * 4))
 
 // module.exports = board;
